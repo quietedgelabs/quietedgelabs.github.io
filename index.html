@@ -5,48 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiet Edge Labs</title>
 <meta name="description" content="Quiet Edge Labs makes small apps that turn spare minutes into real skills.">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  :root { --bg:#F7F5EF; --ink:#1B1D1A; --muted:#5C605A; --line:#DEDACF; --accent:#C9502F; }
+  :root { --bg:#F7F5EF; --card:#FFFFFF; --ink:#1B1D1A; --muted:#5C605A; --line:#E4E0D6; --accent:#C9502F; --accent-ink:#FFFFFF; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#151714; --ink:#F4F1E9; --muted:#A6A89F; --line:#2D302B; --accent:#ED6B4B; }
+    :root { --bg:#121311; --card:#1B1D1A; --ink:#F4F1E9; --muted:#A6A89F; --line:#2D302B; --accent:#ED6B4B; --accent-ink:#121311; }
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink);
          font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-         font-size:17px; line-height:1.6; text-align:left; }
-  main { max-width:680px; margin:0 auto; padding:40px 20px 72px; }
-  .brand { font-size:13px; font-weight:700; letter-spacing:.16em; color:var(--accent); text-decoration:none; }
-  h1 { font-size:34px; line-height:1.15; letter-spacing:-.02em; margin:14px 0 6px; }
-  .date { color:var(--muted); font-size:15px; margin:0 0 28px; }
-  h2 { font-size:20px; margin:36px 0 8px; }
-  p, li { margin:0 0 12px; }
-  ul { padding-left:22px; margin:0 0 12px; }
+         font-size:17px; line-height:1.6; text-align:left; -webkit-font-smoothing:antialiased; }
   a { color:var(--accent); }
-  .summary { border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:0 0 8px; }
-  .summary p:last-child { margin-bottom:0; }
-  footer { margin-top:48px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:15px; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  header { padding:22px 0; }
+  header .wrap { display:flex; align-items:center; justify-content:space-between; }
+  .brand { font-size:13px; font-weight:700; letter-spacing:.16em; color:var(--accent); text-decoration:none; }
+  .nav a { color:var(--muted); text-decoration:none; font-size:15px; margin-left:18px; }
+  .hero { padding:56px 0 48px; max-width:640px; }
+  h1 { font-size:52px; line-height:1.03; letter-spacing:-.035em; margin:0 0 18px; }
+  .lede { font-size:19px; color:var(--muted); margin:0; }
+  h2 { font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+  .app { display:grid; grid-template-columns:auto 1fr auto; gap:20px; align-items:center;
+         background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; text-decoration:none; color:inherit;
+         transition:transform .15s ease, box-shadow .15s ease; }
+  .app:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,.08); }
+  .app img { width:76px; height:76px; border-radius:18px; box-shadow:0 4px 14px rgba(0,0,0,.18); }
+  .app .name { font-weight:700; font-size:20px; line-height:1.2; }
+  .app .desc { color:var(--muted); font-size:16px; margin-top:4px; }
+  .pill { font-size:13px; font-weight:600; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:5px 12px; white-space:nowrap; }
+  .principles { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:52px 0 0; }
+  .principles div { border-top:2px solid var(--ink); padding-top:12px; }
+  .principles h3 { font-size:17px; margin:0 0 4px; }
+  .principles p { margin:0; color:var(--muted); font-size:15.5px; }
+  .contact { margin:52px 0 0; max-width:640px; }
+  .contact p { margin:0; }
+  footer { margin-top:64px; padding:22px 0 48px; border-top:1px solid var(--line); color:var(--muted); font-size:15px; }
   footer a { margin-right:16px; }
+  @media (max-width: 760px) {
+    .hero { padding:28px 0 36px; }
+    h1 { font-size:40px; }
+    .app { grid-template-columns:auto 1fr; }
+    .pill { grid-column:1 / -1; justify-self:start; }
+    .principles { grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body>
-<main>
-<a class="brand" href="index.html">QUIET EDGE LABS</a>
-<h1>Small apps for getting sharper.</h1>
-<p class="date">An independent software studio</p>
-<p>Quiet Edge Labs makes focused apps for iPhone that turn a few spare minutes into a real skill. No accounts, no advertising and no tracking.</p>
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">QUIET EDGE LABS</a>
+    <nav class="nav"><a href="hitme/index.html">HIT ME</a><a href="mailto:support@quietedgelab.com">Contact</a></nav>
+  </div>
+</header>
 
-<h2>Our apps</h2>
-<div class="summary">
-<p><strong><a href="hitme/index.html">HIT ME</a></strong><br>Practice drills for iPhone that train you to keep a running count against the clock.</p>
-</div>
+<main class="wrap">
+  <div class="hero">
+    <h1>Small apps for getting sharper.</h1>
+    <p class="lede">Quiet Edge Labs is an independent software studio. We make focused iPhone apps that turn a few spare minutes into a real skill.</p>
+  </div>
 
-<h2>Contact</h2>
-<p>For support, press or anything else, write to <a href="mailto:support@quietedgelab.com">support@quietedgelab.com</a>.</p>
+  <h2>Our apps</h2>
+  <a class="app" href="hitme/index.html">
+    <img src="hitme/icon.png" alt="HIT ME app icon">
+    <div>
+      <div class="name">HIT ME</div>
+      <div class="desc">Learn the Hi-Lo card count and drill it against the clock, ten minutes a day.</div>
+    </div>
+    <span class="pill">Coming soon</span>
+  </a>
 
-<footer>
-<a href="hitme/index.html">HIT ME support</a><a href="hitme/privacy.html">Privacy Policy</a><a href="hitme/terms.html">Terms of Use</a>
-<p style="margin-top:14px">&copy; 2026 Quiet Edge Labs LLC</p>
-</footer>
+  <div class="principles">
+    <div><h3>Short sessions</h3><p>Built for the ten minutes you'd otherwise spend scrolling.</p></div>
+    <div><h3>Real progress</h3><p>Clear numbers that show you getting faster and more accurate.</p></div>
+    <div><h3>Respect for you</h3><p>No ads, no accounts and no tracking. Your practice stays yours.</p></div>
+  </div>
+
+  <div class="contact">
+    <h2>Contact</h2>
+    <p>For support, press or anything else, write to <a href="mailto:support@quietedgelab.com">support@quietedgelab.com</a>.</p>
+  </div>
+
+  <footer>
+    <a href="hitme/index.html">HIT ME support</a><a href="hitme/privacy.html">Privacy Policy</a><a href="hitme/terms.html">Terms of Use</a>
+    <p style="margin:14px 0 0">&copy; 2026 Quiet Edge Labs LLC</p>
+  </footer>
 </main>
 </body>
 </html>
